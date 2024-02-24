@@ -61,7 +61,7 @@ def play_Aryan():
         talk("playing" + song)
         kit.playonyt(song)
 
-     elif ("search" in instruction) or ("google" in instruction):
+    elif ("search" in instruction) or ("google" in instruction):
         if "search" in instruction:
             article = instruction.replace('search', " ")
             talk("searching " + article)
