@@ -1,5 +1,4 @@
-Aryan is a fundamental personal assistant.
-That can perform small tasks like opening/closing apps or searching for something from Google or getting information about any entity(eg: person, place, disease, etc) from the web.
+Aryan is a fundamental virtual personal assistant. It can perform small tasks like opening/closing apps or searching for something from Google or getting information about any entity(eg: person, place, disease, etc) from the web.
 
 Below are some commands you can give Aryan to get it to perform these tasks.
 
