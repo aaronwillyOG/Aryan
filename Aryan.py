@@ -61,6 +61,18 @@ def play_Aryan():
         talk("playing" + song)
         kit.playonyt(song)
 
+     elif ("search" in instruction) or ("google" in instruction):
+        if "search" in instruction:
+            article = instruction.replace('search', " ")
+            talk("searching " + article)
+            kit.search(article)
+
+        elif "google" in instruction:
+            article = instruction.replace('google', " ")
+            talk("searching for " + article + " on google")
+            kit.search(article)
+
+
     elif ("what is" in instruction) or ("who is" in instruction) or ("provide info on" in instruction) or ("provide info about" in instruction) or ("provide information on") or ("provide information about"):
         if "what is" in instruction:
             article = instruction.replace("what is", "")
@@ -89,32 +101,14 @@ def play_Aryan():
             info = wp.summary(article, 20)
             print(info)
             talk(info)
-
-        elif "provide information on" in instruction:
-            article = instruction.replace('provide information on', " ")
-            talk("here is what i found about " + article +", from the web")
-            info = wp.summary(article, 20)
-            print(info)
-            talk(info)
-
+            
         else:
             article = instruction.replace('provide information about', " ")
             talk("collecting information regarding " + article + ", here is what i found")
             info = wp.summary(article, 20)
             print(info)
             talk(info)
-
-    elif ("search" in instruction) or ("google" in instruction):
-        if "search" in instruction:
-            article = instruction.replace('search', " ")
-            talk("searching " + article)
-            kit.search(article)
-
-        elif "google" in instruction:
-            article = instruction.replace('google', " ")
-            talk("searching for " + article + " on google")
-            kit.search(article)
-
+            
     elif 'time' in instruction:
         time = datetime.datetime.now().strftime('%I %M%p')
         talk('Current time' + time)
