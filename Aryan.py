@@ -1,3 +1,5 @@
+# Please Check the Readme file to know the Commands that you can give to Aryan
+
 import os
 import speech_recognition as sr
 import pyttsx3 as tts
