@@ -72,6 +72,20 @@ def play_Aryan():
             talk("searching for " + article + " on google")
             kit.search(article)
 
+    elif 'time' in instruction:
+        time = datetime.datetime.now().strftime('%I %M%p')
+        talk('Current time' + time)
+
+    elif 'date' in instruction:
+        date = datetime.datetime.now().strftime('%d %m %Y')
+        talk("Today is" + date)
+
+    elif 'how are you' in instruction:
+        talk('I am Fine, thank you')
+    
+    elif 'what is your name' in instruction:
+        talk('I am Aryan, what can i do for you')
+
 
     elif ("what is" in instruction) or ("who is" in instruction) or ("provide info on" in instruction) or ("provide info about" in instruction) or ("provide information on") or ("provide information about"):
         if "what is" in instruction:
@@ -109,20 +123,6 @@ def play_Aryan():
             print(info)
             talk(info)
             
-    elif 'time' in instruction:
-        time = datetime.datetime.now().strftime('%I %M%p')
-        talk('Current time' + time)
-
-    elif 'date' in instruction:
-        date = datetime.datetime.now().strftime('%d %m %Y')
-        talk("Today is" + date)
-
-    elif 'how are you' in instruction:
-        talk('I am Fine, thank you')
-    
-    elif 'what is your name' in instruction:
-        talk('I am Aryan, what can i do for you')
-
     else:
         talk("Please repeat")
 
