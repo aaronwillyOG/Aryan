@@ -23,8 +23,6 @@ def gtt():
         g = 'good evening, how can i help.'
         return g
 
-def mation():
-    list = ['here is what i found', 'here you go', "is this what you're looking for?", ]
 
 def rg():
     list = [greet,gtt]
