@@ -24,39 +24,31 @@ def talk(text):
 def wake_word():
     try:
         with sr.Microphone() as origin:
-            print("To Start Say Hey Aryan")
-            speech  = listener.listen(origin)
-            word = listener.recognize_google(speech)
-            word = word.lower()
-
+            print("To start, say 'Hey Aryan'")
+            speech = listener.listen(origin)
+            word = listener.recognize_google(speech).lower()
+            if "aryan" in word:
+                return True
     except sr.UnknownValueError:
-        word = ""
-        print("Sorry,Wake Work not Found\n")
-
+        print("Wake word not detected.")
     except sr.RequestError as e:
-        word = ""
-        print("Error; {0}".format(e))
-    return word        
-
+        print(f"Error with speech recognition: {e}")
+    return False
+ 
 def input_instruction():
     global instruction
     try:
         with sr.Microphone() as origin:
-            print("listening...")
-            speech  = listener.listen(origin)
-            instruction = listener.recognize_google(speech)
-            instruction = instruction.lower()
+            print("Listening...")
+            speech = listener.listen(origin)
+            instruction = listener.recognize_google(speech).lower()
             if "aryan" in instruction:
-                instruction = instruction.replace('aryan', '')
-                print(instruction)
-
+                instruction = instruction.replace('aryan', '').strip()
+                print(f"Recognized command: {instruction}")
     except sr.UnknownValueError:
         instruction = ""
-        talk("Sorry, I didn't understand that.\n")
-
+        talk("Sorry, I didn't catch that.")
     except sr.RequestError as e:
         instruction = ""
-        print("Error; {0}".format(e))
-
-    if instruction != "":
-        return instruction        
+        talk("It seems there's an issue with the network. Please try again.")
+    return instruction if instruction else None  
