@@ -11,11 +11,11 @@ def gtt():
     time = datetime.now()
     hour = time.hour
 
-    if hour < 12:
+    if hour >= 4 and hour < 12:
         g = 'good morning, how can i help.'
         return g
     
-    elif hour < 18:
+    elif hour < 17:
         g = 'good afternoon, how can i help.'
         return g
     
