@@ -1,4 +1,4 @@
-### Project: ARYAN - Virtual Assistant
+### Project: ARYAN - Voice Assistant
 
 This is a **virtual assistant**. Users interact to get real-time information, perform searches, and execute various commands.
 
